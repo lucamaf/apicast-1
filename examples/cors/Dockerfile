@@ -1,8 +1,8 @@
-FROM registry.access.redhat.com/3scale-amp20/apicast-gateway:1.0
+FROM quay.io/3scale/apicast:master
 
-RUN mkdir /opt/app-root/app/mssl
-COPY cert.pem /opt/app-root/app/mssl/
-COPY key_94744bc5-e945-457f-ad19-c98d1fe24c6f.pem /opt/app-root/app/mssl/
+RUN mkdir /opt/app-root/src/mssl
+COPY cert.pem /opt/app-root/src/mssl/
+COPY key_94744bc5-e945-457f-ad19-c98d1fe24c6f.pem /opt/app-root/src/mssl/
 
-COPY mssl.conf /opt/app-root/app/apicast.d/location.d/
+COPY mssl.conf /opt/app-root/src/apicast.d/location.d/
 
